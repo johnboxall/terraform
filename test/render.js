@@ -171,18 +171,6 @@ describe("render(path, callback)", function(){
       })
     })
 
-    it("should not include markdown metadata", function(done){
-      var root = __dirname + "/fixtures/render/markdown"
-      var poly = polymer.root(root)
-      poly.render("metadata.md", function(errors, body){
-        should.not.exist(errors)
-        should.exist(body)
-        body.should.include("<h1>“Iñtërnâtiônàlizætiøn”</h1>")
-        body.should.include("</html>")
-        done()
-      })
-    })
-
     it("should render special characters in less", function(done){
       var root = __dirname + "/fixtures/render/internationalization"
       var poly = polymer.root(root)
